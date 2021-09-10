@@ -15,3 +15,7 @@ This application was created to help keep track of your finances by adding and s
 
 ## Technology
 This app was pre-built for us using HTML/CSS and Javascript. I used Express.js, Node, and IndexDB to complete the task. Heroku is used to deploy the application.
+
+## Installation
+To install this generator, please download this repo onto your local computer. Then, make sure to:
+- Install npm packages with `npm i`
