@@ -28,3 +28,21 @@ To use this application:
 ![Demo Walkthrough](./assets/demo.gif)
 
 Deployed link: https://agile-hollows-52703.herokuapp.com
+
+## Code
+This code created a new object store for pending.
+```
+request.onupgradeneeded = function (event) {
+  const db = event.target.result;
+  db.createObjectStore("pending", { autoIncrement: true });
+};
+```
+
+This function helped to add a record to store.
+```
+function saveRecord(record) {
+  const transaction = db.transaction(["pending"], "readwrite");
+  const store = transaction.objectStore("pending");
+  store.add(record);
+}
+```
