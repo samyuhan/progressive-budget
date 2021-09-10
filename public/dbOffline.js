@@ -28,3 +28,29 @@ function saveRecord(record) {
   const store = transaction.objectStore("pending");
   store.add(record);
 }
+
+function checkdb() {
+  const transaction = db.transaction(["pending"], "readwrite");
+  const store = transaction.objectStore("pending");
+  const all = store.getAll();
+
+  all.onsuccess = function () {
+    if (all.result.length > 0) {
+      fetch("/api/transaction/bulk", {
+        method: "POST",
+        body: JSON.stringify(all.result),
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        }
+      })
+        .then(response => response.json())
+        .then(() => {
+          const transaction = db.transaction(["pending"], "readwrite");
+          const store = transaction.objectStore("pending");
+          store.clear();
+        });
+    }
+  };
+}
+
