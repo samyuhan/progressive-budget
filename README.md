@@ -19,3 +19,9 @@ This app was pre-built for us using HTML/CSS and Javascript. I used Express.js, 
 ## Installation
 To install this generator, please download this repo onto your local computer. Then, make sure to:
 - Install npm packages with `npm i`
+
+## Usage
+To use this application: 
+- Open Terminal
+- Type `node server.js` 
+- Open your browser and type `http://localhost:3000` to open the app
