@@ -54,3 +54,5 @@ function checkdb() {
   };
 }
 
+// add event listener for when it's back online
+window.addEventListener("online", checkDatabase);
