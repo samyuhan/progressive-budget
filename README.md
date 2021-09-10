@@ -12,3 +12,6 @@
 
 ## Description
 This application was created to help keep track of your finances by adding and subtracting funds. The task was to refractor code so that transactions can be done offline as well. The database is updated when back online!
+
+## Technology
+This app was pre-built for us using HTML/CSS and Javascript. I used Express.js, Node, and IndexDB to complete the task. Heroku is used to deploy the application.
