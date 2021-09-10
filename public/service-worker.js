@@ -15,3 +15,11 @@ self.addEventListener('install', event => {
     self.skipWaiting();
   });
   
+  // event listener for fetch to get from cache
+  self.addEventListener('fetch', event => {
+    event.respondWith(
+      caches.match(event.request).then( response => {
+        return response || fetch(event.request);
+      })
+    );
+  });
